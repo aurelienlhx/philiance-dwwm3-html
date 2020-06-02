@@ -1,0 +1,44 @@
+<!-- Balise ouvrante/fermante (avec contenu) -->
+<balise>
+    Du texte
+</balise>
+
+<!-- Balise auto-fermante (sans-contenu) -->
+<balise/>
+
+<!-- Balises imbriquées -->
+<balise1>
+    Du texte
+    <balise2>
+        Du texte
+        <balise3></balise3>
+        <balise4>Du texte</balise4>
+    </balise2>
+</balise1>
+
+<!-- Balise avec attribut -->
+<balise nom="valeur"></balise>
+
+<!-- Un exemple concret de structuration de données -->
+<catalogue>
+    <produit type="jouet">
+        <nom>Super Ballon</nom>
+        <description>
+            L'ami des terrains de foot
+        </description>
+        <prix devise="euro" tva="20%">
+            15.99
+        </prix>
+    </produit>
+    <produit type="jouet">
+        <nom>Super Poupée</nom>
+        <description>
+            L'ami des goûters dinette
+        </description>
+        <prix>
+            15.99
+            <devise>euro</devise>
+            <tva>20%</tva>
+        </prix>
+    </produit>
+</catalogue>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+    <!-- Racine du document -->
+    <head>
+        <!-- Entête du document html -->
+
+        <!-- titre pour référencement -->
+        <title>Découvrir le HTML</title> 
+        
+        <!-- description pour référencement -->
+        <meta name="description" content="Débuter avec HTML pas à pas - Formation Philiance DWWM3" />
+
+        <!-- encodage de ma page -->
+        <meta charset="utf-8"/>
+
+        <!-- lier une feuille de style css -->
+        <link rel="stylesheet" href="style.css"/>
+
+        <!-- écrire du code css directement dans html -->
+        <style>
+            body{
+                font-style:italic;
+            }
+        </style>
+
+        <!-- lier un script javascript -->
+        <script src="script.js"></script>
+
+        <!-- écrire du code javascript directement dans html -->
+        <script>
+            console.log('Je suis un autre script javascript');
+        </script>
+
+    </head>
+    <body>
+        <!-- Corps du document html -->
+        
+        <h1>Découvrir le html</h1>
+
+        <hr/>
+
+        <h2>Les types de boites/balises</h2>
+        
+        <h3>Type block</h3>
+        <div style="border:1px solid black;width:20%;padding:5px;">
+            <!-- div est une balise de type block -->
+            <div style="border:1px dotted black;margin:5px;">Un petit texte</div>
+            <div style="border:1px dotted black;margin:5px;">Un texte plus long voire beaucoup plus long</div>
+        </div>
+
+        <br/>
+
+        <h3>Type inline</h3>
+        <div style="border:1px solid black;width:20%;padding:5px;">
+            <!-- span est une balise de type inline -->
+            <span style="border:1px dotted black;margin:5px;">Un petit texte</span>
+            <span style="border:1px dotted black;margin:5px;">Un texte plus long voire beaucoup plus long</span>
+        </div>
+
+        <br/>
+
+        <h3>Type inline-block</h3>
+        <div style="border:1px solid black;width:20%;padding:5px;">
+            <!-- span est une balise de type inline -->
+            <span style="display:inline-block;border:1px dotted black;margin:5px;">Un petit texte</span>
+            <div style="display:inline-block;border:1px dotted black;margin:5px;">Un texte plus long voire beaucoup plus long</div>
+        </div>
+
+        <p>Block dans inline n'est pas correct</p>
+        <span>
+            <div></div>
+        </span>
+
+        <hr/>
+
+        <h2>Hierarchistation du contenu </h2>
+
+        <h3>Les titres</h3>
+
+        <p> 
+            La balise <code>&lt;h1&gt;</code> est un titre de niveau 1<br/>
+            La balise <code>&lt;h2&gt;</code> est un titre de niveau 2<br/>
+            La balise <code>&lt;h3&gt;</code> est un titre de niveau 3<br/>
+            La balise <code>&lt;h4&gt;</code> est un titre de niveau 4<br/>
+            La balise <code>&lt;h5&gt;</code> est un titre de niveau 5<br/>
+            La balise <code>&lt;h6&gt;</code> est un titre de niveau 6<br/>
+        </p>
+
+        <p>Je reviens à la ligne avec <code>&lt;br/&gt;</code></p>
+        <p>Il ne peut y avoir qu'une balise h1 par document html</p>
+
+        <p>Pour écrire du code dans du code on utilise les entités html &amp;lt; pour le &lt; et &amp;gt; pour le &gt;</p>
+
+        <!-- le hr permet de créer une séparation -->
+        <hr/>
+
+        <h3>Plus de sémantique</h3>
+        
+        <p>Une gros block de citation</p>
+        <blockquote>
+            <p>Une grand pouvoir implique de grandes responsabilités</p>
+        </blockquote>
+
+        <p>Une petite citation au sein d'une phrase serait <q>Une grand pouvoir implique de grandes responsabilités</q></p>
+        
+        <p>Publié le <time datetime="2020-06-02">Le 2 juin 2020</time></p>
+
+        <p>
+            Mettre un mot en <strong>exergue</strong>
+        </p>
+
+        <hr/>
+
+        <h3>Point sur les urls</h3>
+        <p>Une url est l'identifiant d'une resource sur le web par son emplacement</p>
+
+        <h3>Les ancres</h3>
+
+        <p>Le lien prend toujours une URL en valeur de l'attribut href</p>
+        <a href="page.html">Lien dans la même page</a>
+        <a href="page.html" target="_blank">Lien vers une autre page</a>
+        <a href="page.html" title="Je suis une infobulle">Lien avec infobulle</a>
+
+    </body>
+</html>
+<!-- Rien en dehors de html -->
