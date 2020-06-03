@@ -32,14 +32,22 @@
         </script>
 
     </head>
-    <body>
+    <body id="haut">
         <!-- Corps du document html -->
+
+        <!-- Les ancres sur un lien permettent de naviguer au sein même d'une page -->
+        <div>
+            <a href="#boites">Les types de boites</a>
+            <a href="#contenu">Hierarchistation du contenu</a>
+            <a href="#liens">Les ancres</a>
+        </div>
         
         <h1>Découvrir le html</h1>
 
         <hr/>
 
-        <h2>Les types de boites/balises</h2>
+        <!-- Id est l'attribut qui fonctionne avec les ancres pour permettre la navigation : on utilise le même terme que dans le href (sans le #) -->
+        <h2 id="boites">Les types de boites/balises</h2>
         
         <h3>Type block</h3>
         <div style="border:1px solid black;width:20%;padding:5px;">
@@ -73,7 +81,7 @@
 
         <hr/>
 
-        <h2>Hierarchistation du contenu </h2>
+        <h2 id="contenu">Hierarchistation du contenu</h2>
 
         <h3>Les titres</h3>
 
@@ -111,16 +119,440 @@
 
         <hr/>
 
-        <h3>Point sur les urls</h3>
+        <h2>Les liens</h2>
+
         <p>Une url est l'identifiant d'une resource sur le web par son emplacement</p>
 
-        <h3>Les ancres</h3>
+        <h3 id="ancres">Les ancres</h3>
 
         <p>Le lien prend toujours une URL en valeur de l'attribut href</p>
-        <a href="page.html">Lien dans la même page</a>
+        <a href="page.html" >Lien dans la même page</a>
         <a href="page.html" target="_blank">Lien vers une autre page</a>
         <a href="page.html" title="Je suis une infobulle">Lien avec infobulle</a>
 
+        <h3>Les types d'urls</h3>
+
+        <h4>Les urls relatives</h4>
+
+        <p>
+            Une url relative est le chemin vers un fichier depuis l'endroit ou l'on se trouve
+            <br/>
+            Elles commencent par . ou .. le plus souvent 
+            <a href="page.html">Lien vers url relative (dans le même dossier)</a>
+            <a href="./page.html">Lien vers url relative (dans le même dossier)</a>
+            <a href="../page.html">Lien vers url relative (dans le dossier parent)</a>
+        </p>
+
+        <h4>Les urls absolues</h4>
+
+        <p>
+           Une Url absolue est le chemin vers un fichier depuis la racine de la machine
+           Elles commencent avec un slash
+           <a href="/page.html">Lien vers url absolue</a>
+           <a href="http://www.aurelienlheureux.com/page.html">Lien vers url absolue (avec http)</a>
+        </p>
+
+        <h4>Les ancres</h4>
+
+        <p>
+            Les ancres sont une référence vers un emplacement à l'intérieur de notre page.
+            <a href="#haut">Lien vers une ancre (haut de la page)</a>
+        </p>
+
+        <h4>Les autres protocoles</h4>
+
+        <p>
+            <a href="mailto:hello@aurelienlheureux.com?subject=J'ai une question sur le cours&body=Bonjour,">Lien pour envoyer un email</a>
+            <a href="tel:+3312345678">Lien vers numéro de téléphone</a>
+        </p>
+
+        <hr/>
+
+        <h2>
+            Les listes
+        </h2>
+
+        <p>Liste non ordonnée</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>
+                Item 3
+                <ul>
+                    <li>Sous item 1</li>
+                    <li>Sous item 2</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Liste non ordonnée</p>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+        <p>Une liste comme celle-ci n'a pas de sens on préconise les balises ul, ol et li</p>
+        <p>
+            1. item 1<br/>
+            2.item 2<br/>
+            &bull; item 3<br/>
+        </p>
+
+        <hr/>
+
+        <h2>
+            Les medias
+        </h2>
+
+        <h3>
+            Les images
+        </h3>
+
+        <p>Une image avec une url relative</p>
+        <img height="100" src="images/image.jpg" alt="Description d'une image avec alt" title="Titre de l'image avec title" />
+        <p>Le texte alternatif de l'image est lu pour les handicaps visuels et affichée si l'url ne fonctionne pas</p>
+
+        <p>une image avec une url absolue</p>
+        <img src="C:/Applications/MAMP/htdocs/formations/philiance-dwwwm3/html/images/image.jpg" alt="Image non chargé">
+    
+        <p>Lien sur une image (si je clique dessus je retourne en haut)</p>
+        <a href="#haut">
+            <img width="100" src="images/fleche.png" alt="Remonter en haut">
+        </a>
+
+        <p>Une image dont le ratio n'est pas respecté</p>
+        <img width="100" height="20" src="images/fleche.png" alt="Remonter en haut">
+
+        <p>La taille d'une image peut-être spécifié en %</p>
+        <img width="20%" src="images/fleche.png" alt="Remonter en haut">
+
+        <p>Test d'une image webp</p>
+        <img width="20%" src="images/photo.webp" alt="Photo">
+
+        <h4>Les videos et l'audio</h4>
+
+        <p>Intégration d'une video</p>
+        <video width="200" src="images/movie.mp4" autoplay muted controls></video>
+
+        <p>Possibilité de mettre plusieurs source video</p>
+        <video autoplay muted controls>
+            <source src="images/movie.mp4" type="video/mp4"></source>
+            <source src="images/movie.ogg" type="video/mp4"></source>
+            Ne supporte pas les videos avec Html5
+        </video>
+
+        <p>Intégration d'un lecteur de son</p>
+        <audio controls>
+            <source src="images/sound.mp3" type="video/mp4"></source>
+            <source src="images/sound.wav" type="video/mp4"></source>
+        </audio>
+
+        <hr/>
+
+        <h2>Les contenus embarqués</h2>
+
+        <h3>Iframe</h3>
+        <p>J'affiche une page  depuis mon ordinateur</p>
+        <iframe src="page.html" frameborder="0" width="100%"></iframe>
+        <p>J'affiche un fichier externe dans ma page</p>
+        <iframe src="https://www.aurelienlheureux.com/docs/html/html.pdf" frameborder="0"></iframe>
+        <p>J'affiche une iframe d'une page qui ne m'appartient pas</p>
+        <iframe src="https://openclassrooms.com/fr/" frameborder="0"></iframe>
+        <p>Pour la sécurité mon site et mes utilisateurs, il y a des restrictions que je peux mettre en place pour éviter de me faire embarquer mon contenu sous iframe sur un site qui n'est pas le mien</p>
+    
+        <h3>Canvas</h3>
+        <canvas id="dessin"></canvas>
+    
+        <hr/>
+
+        <h2>Les tableaux</h2>
+
+        <p>Structure totale d'un tableau</p>
+        <!-- Table est la racine de notre tableau -->
+        <table width="500" height="200" border="1">
+            <caption>Légende de tableau</caption>
+            <thead><!-- regroupe les entêtes de tableau -->
+                <tr><!-- chaque groupe contient des lignes -->
+                    <th>Colonne 1</th><!-- chaque cellule correspond à une colonne -->
+                    <th>Colonne 2</th><!-- les cellules de thead sont des th -->
+                    <th>Colonne 3</th>
+                </tr>
+            </thead>
+            <tbody><!-- regroupe les données de tableau -->
+                <tr><!-- chaque groupe contient des lignes -->
+                    <td>Valeur A</td><!-- les cellules de tbody sont des td -->
+                    <td>Valeur B</td>
+                    <td>Valeur G</td>
+                </tr>
+                <!-- boucle pour i va de 0 à 2 -->
+                <tr>
+                    <!-- boucle pour j va de 0 à 3-->
+                    <td>Valeur C</td>
+                    <td>Valeur D</td>
+                    <td>Valeur H</td>
+                </tr>
+                <tr>
+                    <td>Valeur E</td>
+                    <td>Valeur F</td>
+                    <td>Valeur I</td>
+                </tr>
+            </tbody>
+            <tfoot><!-- regroupe les données en pied de tableau -->
+                <tr><!-- chaque groupe contient des lignes -->
+                    <td>Pied de tableau 1</td><!-- les cellules de tfoot sont des td -->
+                    <td>Pied de tableau 2</td>
+                    <td>Pied de tableau 3</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p>Une légende dans un pargraphe (sans caption)</p>
+
+        <p>Tableau simple sans groupes (equivalent a tbody seul)</p>
+        <table width="500" border="1"><!-- sans groupe toute les données sont considérés dans tbody -->
+            <tr><!-- alternative a thead -->
+                <th></th>
+                <th>Colonne 1</th>
+                <th>Colonne 2</th>
+            </tr>
+            <tr>
+                <th>Ligne 1</th>
+                <td>Valeur A</td>
+                <td>Valeur B</td>
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td>Valeur C</td>
+                <td>Valeur D</td>
+            </tr>
+            <tr><!-- alternative a tfoot -->
+                <th></th>
+                <th>Pied 2</th>
+                <th>Pied 3</th>
+            </tr>
+        </table>
+
+        <p>Tableau imbriqué</p>
+        <table border="1" width="500">
+            <tr>
+                <th>Colonne 1</th>
+                <th>Colonne 2</th>
+            </tr>
+            <tr>
+                <td>Valeur A</td>
+                <td>
+                    <table border="1" width="100%">
+                        <tr>
+                            <td>Colonne 1.bis</td>
+                            <td>Colonne 2.bis</td>
+                        </tr>
+                        <tr>
+                            <td>Valeur B</td>
+                            <td>Valeur C</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <p>Attribut colspan</p>
+
+        <table border="1">
+            <tr>
+                <th></th>
+                <th colspan="2" >Entete</th>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+            <tr>
+                <th>Ligne 1</th>
+                <td>Valeur A</td>
+                <td>Valeur B</td>
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td>Valeur C</td>
+                <td>Valeur D</td>
+            </tr>
+        </table>
+
+        <p>Attribut rowspan</p>
+
+        <table border="1">
+            <tr>
+                <th>Ligne 1</th>
+                <td>Valeur A</td>
+                <td>Valeur B</td>
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td rowspan="2">Valeur C</td>
+                <td>Valeur D</td>
+            </tr>
+            <tr>
+                <th>Ligne 3</th>
+                <td>Valeur F</td>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+        </table>
+
+        <p>Attribut rowspan et colspan en même temps sur la même balise</p>
+
+        <table border="1">
+            <tr>
+                <th>Ligne 1</th>
+                <td>Valeur A</td>
+                <td>Valeur B</td>
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td colspan="2" rowspan="2">Valeur C</td>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+            <tr>
+                <th>Ligne 3</th>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+        </table>
+
+        <p>Attribut rowspan et colspan en même temps sur des balises différentes</p>
+
+        <table border="1">
+            <tr>
+                <th>Ligne 1</th>
+                <td colspan="2">Valeur A</td>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td rowspan="2">Valeur C</td>
+                <td>Valeur D</td>
+            </tr>
+            <tr>
+                <th>Ligne 3</th>
+                <td>Valeur E</td>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+        </table>
+        
+        <p>Attention ! Ce n'est pas comme excel on ne peut pas fusioner des lignes et colonnes à partir de la même celulle sans créer une plage (voir exemple plus haut)</p>
+
+        <table border="1">
+            <tr>
+                <th>Ligne 1</th>
+                <td>Valeur A</td>
+                <td>Valeur B</td>
+            </tr>
+            <tr>
+                <th>Ligne 2</th>
+                <td colspan="2" >Valeur C</td>
+                <td rowspan="2">Valeur C</td>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+            <tr>
+                <th>Ligne 3</th>
+                <!-- j'ai supprimé une cellule -->
+            </tr>
+        </table>
+
+        <hr/>
+
+        <h2>Les formulaires</h2>
+        <!-- method permet de spécifier comment j'envoie les données du formulaire -->
+        <!-- action permet de sépcifier où j'envoie ces données -->
+        <!-- 
+            les champs qui seront envoyé avec le formulaire sont ceux qui ont l'attribut name 
+            lorsque qu'il n'y a pas de saisi utilisateur textuelle, on peut ajouter un attribut value pour sépcifier la donnée à envoyer
+        -->
+        <form action="contact.php" method="post"><!-- balise racine du formulaire-->
+            <p>Champs de type texte et hérités</p>
+            <label>Champ de type texte :</label> <input type="text" tabindex="1" /><br/>
+            <label>Champ de type email :</label> <input type="email" tabindex="3"/><br/>
+            <label>Champ de type password :</label> <input type="password"/><br/>
+            <label>Champ de type tel :</label> <input type="tel"/><br/>
+            <label>Champ de type search :</label> <input type="search"/><br/>
+            <label>Champ de type number :</label> <input type="number"/><br/>
+            <label>Champ de type date :</label> <input type="date" tabindex="2"/><br/>
+
+            <p>Ajouter votre nom</p>
+            <label>Champ de type texte :</label> <input type="text" name="nom" placeholder="Votre nom"/><br/>
+            
+            <p>Ajouter un fichier</p>
+            <label>Champ de type file :</label> <input type="file"/><br/>
+
+            <p>Champs de case à cocher</p>
+
+            <p>Checkbox (On coche zéro à plusieurs cases)</p>
+            <ul>
+                <li>
+                    <!-- je coche le premier element de ma liste avec l'attribut checked -->
+                    <input id="item1" type="checkbox" name="liste" value="item 1" checked /><label for="item1">Item 1</label><br/>
+                </li>
+                <li>
+                    <input id="item2" type="checkbox" name="liste" value="item 2"/><label for="item2">Item 2</label><br/>
+                </li>
+                <li>
+                    <input id="item3" type="checkbox" name="liste" value="item 3"/><label for="item3">Item 3</label><br/>
+                </li>
+            </ul>
+
+            <p>Radios (On coche l'un ou l'autre)</p>
+            <ul>
+                <li>
+                    <!-- je permet de cocher l'un ou l'autre case grâce à l'attribut name qui est le même -->
+                    <input type="radio" name="civilité" value="item 1" /><label>Item 1</label><br/>
+                </li>
+                <li>
+                    <input type="radio" name="civilité" value="item 2" /><label>Item 2</label><br/>
+                </li>
+            </ul>
+
+            <p>Champs cachés</p>
+            <label>Champ de type hidden :</label> <input type="hidden" name="formulaire-contact" value="1" /><br/> 
+            
+            <!-- l'attribut for sur le label et l'attribut id sur l'input/textarea permet de donner le focus au champ -->
+            <label for="message">Zone de texte</label>
+            <textarea name="message" id="message" placeholder="Ecrivez-ici" cols="36" rows="5"></textarea>
+
+            <p>Liste de sélection</p>
+            <select name="objet">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+            
+            <p>Pour envoyer le formulaire</p>
+            <input type="submit" />
+
+            <p>Pour réinitialiser le formulaire</p>
+            <input type="reset"/>
+        </form>
+
+        <hr/>
+
+        <h2>Les balises structurantes</h2>
+
+        <p>header/footer/section/main/article/aside/nav</p>
+
+        <h2>Les attributs globaux</h2>
+
+        <p>content-editable</p>
+        
+        <div contenteditable>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus arcu elit, auctor non metus ac, varius tristique massa. Donec a orci sed lectus euismod suscipit non a justo. Sed id lobortis odio, vel pretium magna.
+        </div>
+
+        <p>data-*</p>
+        <p>Une information disponible pour le développeur sous forme d'un attribut mais qui n'est pas rendu visuellement à l'utilisateur</p>
+        <div data-message="bonjour"></div>
+        <input type="text" data-error="Une erreur est survenue">
+
+        <!-- execute du javascript après le chargement entier du html de la page -->
+        <script>
+            //Je dessine dans la balise canvas qui a l'id dessin
+            var canvas = document.getElementById('dessin');
+            var ctx = canvas.getContext('2d');
+            ctx.fillRect(0,0,50,50);
+        </script>
     </body>
 </html>
 <!-- Rien en dehors de html -->
